@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3e9b59aa2903fad47b3fdcfb3907aa68
+guid: dcaac72674487b74796f25881b15aca5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,31 +123,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player(enemy)_running_0
+      name: player(enemy)_jumping_0
       rect:
         serializedVersion: 2
         x: 16
-        y: 12
-        width: 16
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ceec05ec2a1e8f4dbd36e0f74c498e6
-      internalID: 214591191
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player(enemy)_running_1
-      rect:
-        serializedVersion: 2
-        x: 76
         y: 12
         width: 16
         height: 31
@@ -158,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e4cb6dd1a30bd148b0fc04f254700c5
-      internalID: -202181981
+      spriteID: bfa9f2137a7f97f478d772dd7b2fe7d2
+      internalID: -381833980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player(enemy)_running_2
+      name: player(enemy)_jumping_1
       rect:
         serializedVersion: 2
-        x: 135
-        y: 12
-        width: 18
-        height: 30
+        x: 76
+        y: 13
+        width: 16
+        height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bffba6492cb31ea4e8ee8096ea201b0f
-      internalID: -857401147
+      spriteID: 46c847798db4569469faa1e1b0180836
+      internalID: 2086057289
       vertices: []
       indices: 
       edges: []
@@ -196,9 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      player(enemy)_running_0: 214591191
-      player(enemy)_running_1: -202181981
-      player(enemy)_running_2: -857401147
+      player(enemy)_jumping_0: -381833980
+      player(enemy)_jumping_1: 2086057289
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
