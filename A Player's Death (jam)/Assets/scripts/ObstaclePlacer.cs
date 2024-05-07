@@ -11,6 +11,8 @@ public class ObstaclePlacer : MonoBehaviour
     public SpriteRenderer placePointSprite;
 
     public GameObject spike;
+
+    
     void Start()
     {
         
@@ -43,6 +45,8 @@ public class ObstaclePlacer : MonoBehaviour
         {
             placePointSprite.enabled = false;
         }
+
+        
         
     }
 }
