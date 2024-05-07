@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,8 @@ public class Obstacle : MonoBehaviour
     public string PlacedAnimationName;
 
     public bool isReady;
+
+    public Action OnReady;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -25,5 +28,7 @@ public class Obstacle : MonoBehaviour
     void Ready()
     {
         isReady = true;
+
+        OnReady.Invoke();
     }
 }

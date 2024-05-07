@@ -29,7 +29,8 @@ public class ObstaclePlacer : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(spike, placePointTransform.position, Quaternion.identity);
+            GameObject spikeObject = Instantiate(spike, placePointTransform.position, Quaternion.identity);
+            spikeObject.GetComponent<Obstacle>().OnReady += OnObstacleReady; 
         }
         
         
@@ -45,8 +46,10 @@ public class ObstaclePlacer : MonoBehaviour
         {
             placePointSprite.enabled = false;
         }
+    }
 
-        
-        
+    void OnObstacleReady()
+    {
+        print("ready");
     }
 }
