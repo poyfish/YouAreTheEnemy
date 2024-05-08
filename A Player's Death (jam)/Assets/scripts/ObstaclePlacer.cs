@@ -12,6 +12,8 @@ public class ObstaclePlacer : MonoBehaviour
 
     public GameObject spike;
 
+    public bool canPlaceObstacle = true;
+
     
     void Start()
     {
@@ -27,10 +29,12 @@ public class ObstaclePlacer : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, ground);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canPlaceObstacle)
         {
             GameObject spikeObject = Instantiate(spike, placePointTransform.position, Quaternion.identity);
-            spikeObject.GetComponent<Obstacle>().OnReady += OnObstacleReady; 
+            spikeObject.GetComponent<Obstacle>().OnReady += OnObstacleReady;
+
+            canPlaceObstacle = false;
         }
         
         
@@ -50,6 +54,6 @@ public class ObstaclePlacer : MonoBehaviour
 
     void OnObstacleReady()
     {
-        print("ready");
+        canPlaceObstacle = true;
     }
 }
