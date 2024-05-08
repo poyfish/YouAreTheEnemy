@@ -7,7 +7,7 @@ public class PlacePoint : MonoBehaviour
     BoxCollider2D coll;
     SpriteRenderer sprite;
 
-    private Color originalColor;
+    
 
     Color newColor;
     void Start()
@@ -15,7 +15,7 @@ public class PlacePoint : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
 
-        originalColor = sprite.color;
+        
     }
 
     
@@ -23,14 +23,14 @@ public class PlacePoint : MonoBehaviour
     {
         if (isInsideGround())
         {
-            sprite.color = Color.red;
-            newColor.a = originalColor.a;
+            sprite.color = new Color(255, 0, 0);
+            
 
         }
         else
         {
-            sprite.color = Color.white;
-            newColor.a = originalColor.a;
+            sprite.color = new Color(255, 255, 255);
+            
         }
     }
 
