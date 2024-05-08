@@ -23,13 +23,13 @@ public class PlacePoint : MonoBehaviour
     {
         if (isInsideGround())
         {
-            sprite.color = new Color(255, 0, 0);
+            sprite.color = new Color(255, 0, 0, sprite.color.a);
             
-
+            
         }
         else
         {
-            sprite.color = new Color(255, 255, 255);
+            sprite.color = new Color(255, 255, 255, sprite.color.a);
             
         }
     }
