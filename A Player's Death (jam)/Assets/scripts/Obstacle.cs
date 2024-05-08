@@ -6,6 +6,9 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     private Animator anim;
+    BoxCollider2D coll;
+
+    //public PlayerEnemy player;
 
     public string startingAnimationName;
     public string PlacedAnimationName;
@@ -18,6 +21,18 @@ public class Obstacle : MonoBehaviour
         anim = GetComponent<Animator>();
 
         anim.CrossFade(PlacedAnimationName, 0, 0);
+
+        coll = GetComponent<BoxCollider2D>();
+    }
+
+    private void Update()
+    {
+        /*
+        if(player.isDead == true)
+        {
+            coll.enabled = false;
+        }
+        */
     }
 
     void StartSpike()

@@ -16,6 +16,8 @@ public class PlayerEnemy : MonoBehaviour
     public float boxCastDistance;
 
     public float deathBoxCastDistance;
+
+    public bool isDead;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -28,22 +30,25 @@ public class PlayerEnemy : MonoBehaviour
 
     void Update()
     {
-        //see if the box cast touches wall
-        bool foundWall = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size / 2, 0f, Vector2.right, boxCastDistance, LayerMask.GetMask("platform"));
-
-
-        bool foundObstacle = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size / 2, 0f, Vector2.right, deathBoxCastDistance, LayerMask.GetMask("death"));
-
-
-        
-        //ground check
-        if (foundWall && isGrounded() || foundObstacle && isGrounded())
+        if (!isDead)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        }
-        rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
+            //see if the box cast touches wall
+            bool foundWall = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size / 2, 0f, Vector2.right, boxCastDistance, LayerMask.GetMask("platform"));
 
-        Animations();
+
+            bool foundObstacle = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size / 2, 0f, Vector2.right, deathBoxCastDistance, LayerMask.GetMask("death"));
+
+
+
+            //ground check
+            if (foundWall && isGrounded() || foundObstacle && isGrounded())
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            }
+            rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
+
+            Animations();
+        }
     }
 
     void Animations()
@@ -63,6 +68,18 @@ public class PlayerEnemy : MonoBehaviour
         else if(isGrounded())
         {
             anim.CrossFade("player_running", 0, 0);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("death"))
+        {
+            isDead = true;
+
+            
+
+            anim.CrossFade("player_death", 0, 0);
         }
     }
 
