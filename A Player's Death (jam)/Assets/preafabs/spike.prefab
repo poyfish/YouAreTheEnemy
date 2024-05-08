@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5756788333098317661}
   - component: {fileID: 5482375700187031241}
   - component: {fileID: 4933410379301108273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spike
-  m_TagString: death
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

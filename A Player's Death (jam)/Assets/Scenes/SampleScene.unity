@@ -1663,6 +1663,7 @@ MonoBehaviour:
   jumpForce: 14
   speed: 4
   boxCastDistance: 2
+  deathBoxCastDistance: 1
 --- !u!95 &1534635373
 Animator:
   serializedVersion: 5
@@ -1736,6 +1737,7 @@ MonoBehaviour:
   placePointTransform: {fileID: 1762203103}
   placePointSprite: {fileID: 1762203102}
   spike: {fileID: 7768479968239015716, guid: 1cd25fa8a61cd614fb97efb6f7b25107, type: 3}
+  canPlaceObstacle: 1
 --- !u!4 &2069099650
 Transform:
   m_ObjectHideFlags: 0

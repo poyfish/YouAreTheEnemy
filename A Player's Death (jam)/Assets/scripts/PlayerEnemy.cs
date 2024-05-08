@@ -14,6 +14,8 @@ public class PlayerEnemy : MonoBehaviour
     float movementSpeed;
 
     public float boxCastDistance;
+
+    public float deathBoxCastDistance;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -29,11 +31,13 @@ public class PlayerEnemy : MonoBehaviour
         //see if the box cast touches wall
         bool foundWall = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size / 2, 0f, Vector2.right, boxCastDistance, LayerMask.GetMask("platform"));
 
+
+        bool foundObstacle = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size / 2, 0f, Vector2.right, deathBoxCastDistance, LayerMask.GetMask("death"));
+
+
         
         //ground check
-        
-
-        if (foundWall && isGrounded())
+        if (foundWall && isGrounded() || foundObstacle && isGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
