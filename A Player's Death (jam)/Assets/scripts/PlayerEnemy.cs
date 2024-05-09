@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static PlayerEnemy;
 
 public class PlayerEnemy : MonoBehaviour
 {
@@ -9,16 +10,24 @@ public class PlayerEnemy : MonoBehaviour
     BoxCollider2D coll;
     Animator anim;
 
-    public float jumpForce;
     public float speed;
 
     float movementSpeed;
 
-    public float boxCastDistance;
-
-    public float deathBoxCastDistance;
-
     public bool isDead;
+
+    [System.Serializable]
+    public struct JumpDistance
+    {
+        public LayerMask Layer;
+
+        public float Distance;
+
+        public float JumpForce;
+    }
+
+    public JumpDistance[] JumpDistances;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,25 +40,29 @@ public class PlayerEnemy : MonoBehaviour
 
     void Update()
     {
-        if (!isDead)
+        if (isDead) return;
+
+        foreach (JumpDistance jumpDistance in JumpDistances)
         {
-            //see if the box cast touches wall
-            bool foundWall = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size / 2, 0f, Vector2.right, boxCastDistance, LayerMask.GetMask("platform"));
+            RaycastHit2D ShouldJump = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size / 3, 0f, Vector2.right, jumpDistance.Distance, jumpDistance.Layer);
 
-
-            bool foundObstacle = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size / 2, 0f, Vector2.right, deathBoxCastDistance, LayerMask.GetMask("death"));
-
-
-
-            //ground check
-            if (foundWall && isGrounded() || foundObstacle && isGrounded())
+            if (ShouldJump && isGrounded())
             {
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            }
-            rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
 
-            Animations();
+                transform.position += new Vector3(0, 0.6f);
+
+                rb.velocity = new Vector2(rb.velocity.x, jumpDistance.JumpForce);
+
+                Debug.Log($"{ShouldJump.collider.gameObject.name} at {Time.time}", ShouldJump.collider.gameObject);
+            }
         }
+
+
+
+        rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
+
+
+        Animations();
     }
 
     void Animations()
@@ -81,7 +94,6 @@ public class PlayerEnemy : MonoBehaviour
             foreach (Collider2D collider in FindObjectsOfType<Collider2D>().Where(G => G.gameObject.CompareTag("death")))
             {
                 Physics2D.IgnoreCollision(coll, collider);
-                Debug.Log(collider.gameObject.name, collider.gameObject);
             }
 
             anim.CrossFade("player_death", 0, 0);
@@ -100,6 +112,6 @@ public class PlayerEnemy : MonoBehaviour
 
     bool isGrounded()
     {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size / 2, 0f, Vector2.down, 1, LayerMask.GetMask("platform"));
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size / 2, 0f, Vector2.down, .5f, LayerMask.GetMask("platform"));
     }
 }
