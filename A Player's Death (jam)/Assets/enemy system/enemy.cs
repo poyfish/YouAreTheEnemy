@@ -26,17 +26,7 @@ public class enemy : MonoBehaviour
 
     public void Update()
     {
-        CheckForHitHead();
-    }
-
-    public void CheckForHitHead()
-    {
-        RaycastHit2D hit = Physics2D.BoxCast(coll.bounds.center + new Vector3(0, .5f), coll.bounds.size + new Vector3(-.1f, -.7f), 0f, Vector2.down, 0, LayerMask.GetMask("Player"));
-
-        if(hit.collider != null)
-        {
-            OnDeath(hit.collider.gameObject);
-        }
+        
     }
 
     public virtual void OnDeath(GameObject hit)
