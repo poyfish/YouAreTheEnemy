@@ -6,18 +6,22 @@ public class ObstaclePlacer : MonoBehaviour
 {
     [SerializeField] LayerMask ground;
 
-    public GameObject placePoint;
-    public Transform placePointTransform;
-    public SpriteRenderer placePointSprite;
+    private PlacePoint placePoint;
+    private SpriteRenderer placePointSprite;
 
     public GameObject spike;
 
     public bool canPlaceObstacle = true;
 
+    public GameObject ObstaclePlaceHolder;
+
     
     void Start()
     {
-        
+        placePoint = Instantiate(ObstaclePlaceHolder).GetComponent<PlacePoint>();
+        placePoint.transform.position = new Vector3(200, 200);
+
+        placePointSprite = placePoint.GetComponent<SpriteRenderer>();
     }
 
 
@@ -29,9 +33,9 @@ public class ObstaclePlacer : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, ground);
 
-        if (Input.GetMouseButtonDown(0) && canPlaceObstacle)
+        if (Input.GetMouseButtonDown(0) && canPlaceObstacle && !placePoint.isInsideGround())
         {
-            GameObject spikeObject = Instantiate(spike, placePointTransform.position, Quaternion.identity);
+            GameObject spikeObject = Instantiate(spike, placePoint.transform.position, Quaternion.identity);
             spikeObject.GetComponent<Obstacle>().OnReady += OnObstacleReady;
 
             canPlaceObstacle = false;
@@ -42,7 +46,7 @@ public class ObstaclePlacer : MonoBehaviour
         {
             Vector2 hitPoint = hit.point;
                     
-            placePointTransform.position = hitPoint;
+            placePoint.transform.position = hitPoint;
             placePointSprite.enabled = true;
         }
 

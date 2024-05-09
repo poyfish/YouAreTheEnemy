@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerEnemy : MonoBehaviour
@@ -77,7 +78,11 @@ public class PlayerEnemy : MonoBehaviour
         {
             isDead = true;
 
-            
+            foreach (Collider2D collider in FindObjectsOfType<Collider2D>().Where(G => G.gameObject.CompareTag("death")))
+            {
+                Physics2D.IgnoreCollision(coll, collider);
+                Debug.Log(collider.gameObject.name, collider.gameObject);
+            }
 
             anim.CrossFade("player_death", 0, 0);
         }

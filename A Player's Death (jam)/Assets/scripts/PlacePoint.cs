@@ -32,10 +32,12 @@ public class PlacePoint : MonoBehaviour
             sprite.color = new Color(255, 255, 255, sprite.color.a);
             
         }
+
+
     }
 
-    bool isInsideGround()
+    public bool isInsideGround()
     {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size / 1.5f, 0f, Vector2.up, 1, LayerMask.GetMask("platform"));
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size / 1.7f, 0f, Vector2.up, 1, LayerMask.GetMask("platform"));
     }
 }
