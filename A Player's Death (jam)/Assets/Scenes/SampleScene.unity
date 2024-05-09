@@ -1651,11 +1651,9 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 8
-  placePoint: {fileID: 0}
-  placePointTransform: {fileID: 0}
-  placePointSprite: {fileID: 0}
   spike: {fileID: 7768479968239015716, guid: 1cd25fa8a61cd614fb97efb6f7b25107, type: 3}
   canPlaceObstacle: 1
+  ObstaclePlaceHolder: {fileID: 0}
 --- !u!4 &2069099650
 Transform:
   m_ObjectHideFlags: 0
