@@ -32,8 +32,6 @@ public class PlacePoint : MonoBehaviour
             sprite.color = new Color(255, 255, 255, sprite.color.a);
             
         }
-
-
     }
 
     public bool isInsideGround()

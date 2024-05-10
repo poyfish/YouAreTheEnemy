@@ -9,19 +9,17 @@ public class ObstaclePlacer : MonoBehaviour
     private PlacePoint placePoint;
     private SpriteRenderer placePointSprite;
 
-    public GameObject spike;
+    public GameObject obstacle;
 
     public bool canPlaceObstacle = true;
 
     public GameObject ObstaclePlaceHolder;
 
+    [SerializeField] bool didSpwanPacePoint;
     
     void Start()
     {
-        placePoint = Instantiate(ObstaclePlaceHolder).GetComponent<PlacePoint>();
-        placePoint.transform.position = new Vector3(200, 200);
-
-        placePointSprite = placePoint.GetComponent<SpriteRenderer>();
+        
     }
 
 
@@ -33,26 +31,39 @@ public class ObstaclePlacer : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, ground);
 
-        if (Input.GetMouseButtonDown(0) && canPlaceObstacle && !placePoint.isInsideGround())
+        if (Input.GetMouseButtonDown(0) && didSpwanPacePoint == false)
         {
-            GameObject spikeObject = Instantiate(spike, placePoint.transform.position, Quaternion.identity);
-            spikeObject.GetComponent<Obstacle>().OnReady += OnObstacleReady;
+            didSpwanPacePoint = true;
 
-            canPlaceObstacle = false;
+            placePoint = Instantiate(ObstaclePlaceHolder).GetComponent<PlacePoint>();
+            placePointSprite = placePoint.GetComponent<SpriteRenderer>();
         }
-        
-        
-        if (hit.collider != null)
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            
+            if (canPlaceObstacle && !placePoint.isInsideGround())
+            {
+                GameObject spikeObject = Instantiate(obstacle, placePoint.transform.position, Quaternion.identity);
+                spikeObject.GetComponent<Obstacle>().OnReady += OnObstacleReady;
+
+                canPlaceObstacle = false;
+
+                
+            }
+            
+        }
+
+        if (hit.collider != null && placePoint != null)
         {
             Vector2 hitPoint = hit.point;
                     
             placePoint.transform.position = hitPoint;
             placePointSprite.enabled = true;
         }
-
         else
         {
-            placePointSprite.enabled = false;
+            Destroy(placePoint);
         }
     }
 
