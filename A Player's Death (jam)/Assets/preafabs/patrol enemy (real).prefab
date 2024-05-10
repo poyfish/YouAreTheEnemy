@@ -55,6 +55,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   MovementSpeed: 3
   FlipSprite: 1
+  obstacle: {fileID: -4097760509702406358}
 --- !u!212 &3485233071877564096
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98,7 +99,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 1756874487, guid: d063f9011c19ada4eb251a3ce08f32b7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.125, y: 1.125}

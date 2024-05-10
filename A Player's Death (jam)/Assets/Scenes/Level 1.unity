@@ -2491,7 +2491,6 @@ MonoBehaviour:
   obstacle: {fileID: 7768479968239015716, guid: 1cd25fa8a61cd614fb97efb6f7b25107, type: 3}
   canPlaceObstacle: 1
   ObstaclePlaceHolder: {fileID: 7586431995126429063, guid: c998ed8f348606b4fb95df82fa609907, type: 3}
-  didSpwanPacePoint: 0
 --- !u!4 &2069099650
 Transform:
   m_ObjectHideFlags: 0

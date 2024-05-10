@@ -6,12 +6,13 @@ using UnityEngine.U2D.Animation;
 
 public class PatrolEnemy : enemy
 {
-    private bool IsFacingRight;
+    private bool IsFacingRight = true;
 
     public float MovementSpeed;
 
     public bool FlipSprite;
 
+    public Obstacle obstacle;
 
     new void Update()
     {
@@ -19,7 +20,11 @@ public class PatrolEnemy : enemy
 
         TryFlipAround();
         CheckForTurnAround();
-        Move();
+
+        if (obstacle.isReady)
+        {
+            Move();
+        }
     }
 
 

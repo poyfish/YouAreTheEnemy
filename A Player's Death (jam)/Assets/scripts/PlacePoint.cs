@@ -21,21 +21,25 @@ public class PlacePoint : MonoBehaviour
     
     void Update()
     {
-        if (isInsideGround())
-        {
-            sprite.color = new Color(255, 0, 0, sprite.color.a);
-            
-            
-        }
-        else
-        {
-            sprite.color = new Color(255, 255, 255, sprite.color.a);
-            
-        }
+            if (isInsideGround())
+            {
+                sprite.color = new Color(255, 0, 0, sprite.color.a);
+            }
+            else
+            {
+                sprite.color = new Color(255, 255, 255, sprite.color.a);
+            }
     }
 
     public bool isInsideGround()
     {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size / 1.7f, 0f, Vector2.up, 1, LayerMask.GetMask("platform"));
+        try
+        {
+            return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size / 1.7f, 0f, Vector2.up, 1, LayerMask.GetMask("platform"));
+        }
+        catch
+        {
+            return false;
+        }
     }
 }
