@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e9497990e27ceb469f5eee0d37f8c24
+guid: 031ae538f3686ad40abad22d8362799b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 15
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -123,55 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: slime_0
+      name: robo_shooter_placed_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 28
-        width: 15
-        height: 15
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d52ddc52c502b2147b99c1f93f59d8e0
-      internalID: -780846867
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime_1
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 28
-        width: 17
-        height: 13
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a218a6c0e67f748458581ebd4fd8558c
-      internalID: 1700450545
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime_2
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 28
+        x: 40
+        y: 40
         width: 19
-        height: 12
+        height: 60
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,41 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aca819e3b25ff374ca655f0a820ab072
-      internalID: -1788866163
+      spriteID: c3887653292d43c4a9a3a176077d2a9d
+      internalID: 518427804
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_3
+      name: robo_shooter_placed_1
       rect:
         serializedVersion: 2
-        x: 200
-        y: 28
-        width: 13
-        height: 22
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de60d5584781e814f8de6dc425ef34c6
-      internalID: 1536819596
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime_4
-      rect:
-        serializedVersion: 2
-        x: 260
-        y: 28
-        width: 13
-        height: 19
+        x: 140
+        y: 40
+        width: 19
+        height: 34
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,8 +158,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49b119448b2745049873001e5360a102
-      internalID: 1009945716
+      spriteID: 850472a356244ea43bf388e36b12167f
+      internalID: -2076447116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robo_shooter_placed_2
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 40
+        width: 17
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 446472382e876664ba71cb9eb5b27782
+      internalID: 1618605418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robo_shooter_placed_3
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 40
+        width: 17
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0936d5349faa746b8908cff20f68c4
+      internalID: 795231911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robo_shooter_placed_4
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 40
+        width: 19
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80a6017b7e1ac1446825bbff5a1839af
+      internalID: 487453860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robo_shooter_placed_8
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 40
+        width: 32
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb25ec69154847c4da72079b0f690700
+      internalID: -2089038348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robo_shooter_placed_9
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 40
+        width: 27
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adad4dbd0320bdb4eb798c5932c34bb6
+      internalID: 1035062039
       vertices: []
       indices: 
       edges: []
@@ -238,12 +280,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      slime_0: -780846867
-      slime_1: 1700450545
-      slime_2: -1788866163
-      slime_3: 1536819596
-      slime_4: 1009945716
-      slime_5: 853636030
+      robo_shooter_placed_0: 518427804
+      robo_shooter_placed_1: -2076447116
+      robo_shooter_placed_10: -1755665913
+      robo_shooter_placed_2: 1618605418
+      robo_shooter_placed_3: 795231911
+      robo_shooter_placed_4: 487453860
+      robo_shooter_placed_5: 1293093017
+      robo_shooter_placed_6: -458698491
+      robo_shooter_placed_7: 441716461
+      robo_shooter_placed_8: -2089038348
+      robo_shooter_placed_9: 1035062039
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

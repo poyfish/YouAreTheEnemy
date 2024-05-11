@@ -6,7 +6,7 @@ using UnityEngine.U2D.Animation;
 
 public class PatrolEnemy : enemy
 {
-    private bool IsFacingRight = true;
+    private bool IsFacingRight = false;
 
     public float MovementSpeed;
 

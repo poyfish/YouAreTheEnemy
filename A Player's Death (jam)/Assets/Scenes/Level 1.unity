@@ -378,7 +378,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -1363981745, guid: 86eacd80d3f709648a742e550237d64d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.375, y: 1.375}
@@ -3269,6 +3269,7 @@ MonoBehaviour:
   inventorySlots:
   - {fileID: 535702574}
   - {fileID: 376357612}
+  currentSlot: 0
 --- !u!4 &1726490596
 Transform:
   m_ObjectHideFlags: 0
@@ -3317,9 +3318,13 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 8
+  enemy:
+    serializedVersion: 2
+    m_Bits: 0
   obstacle: {fileID: 7768479968239015716, guid: 1cd25fa8a61cd614fb97efb6f7b25107, type: 3}
   canPlaceObstacle: 1
   ObstaclePlaceHolder: {fileID: 7586431995126429063, guid: c998ed8f348606b4fb95df82fa609907, type: 3}
+  inventoryManager: {fileID: 0}
 --- !u!4 &2069099650
 Transform:
   m_ObjectHideFlags: 0

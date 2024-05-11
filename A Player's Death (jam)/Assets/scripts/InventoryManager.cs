@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     
     public List<InventorySlot> inventorySlots;
 
-    int currentSlot = 0;
+    public int currentSlot = 0;
 
     private void Awake()
     {
@@ -21,7 +21,7 @@ public class InventoryManager : MonoBehaviour
         
     }
 
-    
+     
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))

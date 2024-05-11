@@ -7,6 +7,8 @@ public class ObstaclePlacer : MonoBehaviour
 {
     [SerializeField] LayerMask ground;
 
+    [SerializeField] LayerMask enemy;
+
     private PlacePoint placePoint;
 
     public GameObject obstacle;
@@ -14,6 +16,8 @@ public class ObstaclePlacer : MonoBehaviour
     public bool canPlaceObstacle = true;
 
     public GameObject ObstaclePlaceHolder;
+
+    public InventoryManager inventoryManager;
 
     void Update()
     {
@@ -31,13 +35,22 @@ public class ObstaclePlacer : MonoBehaviour
         if(Input.GetMouseButton(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, ground);
+            RaycastHit2D checkForEnemy = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, enemy);
 
             if (hit.collider != null && placePoint != null)
             {
                 Vector2 hitPoint = hit.point;
 
                 placePoint.transform.position = hitPoint;
+
+
+
+                if (checkForEnemy.collider != null && placePoint != null && inventoryManager.currentSlot == 0)
+                {
+                    
+                }
             }
+
         }
 
         if (Input.GetMouseButtonUp(0) && !placePoint.IsDestroyed())
@@ -45,8 +58,8 @@ public class ObstaclePlacer : MonoBehaviour
 
             if (!placePoint.isInsideGround())
             {
-                GameObject spikeObject = Instantiate(obstacle, placePoint.transform.position, Quaternion.identity);
-                spikeObject.GetComponent<Obstacle>().OnReady += OnObstacleReady;
+                GameObject obstacleObject = Instantiate(obstacle, placePoint.transform.position, Quaternion.identity);
+                obstacleObject.GetComponent<Obstacle>().OnReady += OnObstacleReady;
 
                 canPlaceObstacle = false;
 
