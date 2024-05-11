@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObstaclePlacer : MonoBehaviour
@@ -22,7 +23,7 @@ public class ObstaclePlacer : MonoBehaviour
 
         if (!canPlaceObstacle) return;
 
-        if (Input.GetMouseButtonDown(0) && canPlaceObstacle)
+        if (Input.GetMouseButtonDown(0))
         {
             placePoint = Instantiate(ObstaclePlaceHolder).GetComponent<PlacePoint>();
         }
@@ -39,10 +40,10 @@ public class ObstaclePlacer : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && !placePoint.IsDestroyed())
         {
 
-            if (canPlaceObstacle && !placePoint.isInsideGround())
+            if (!placePoint.isInsideGround())
             {
                 GameObject spikeObject = Instantiate(obstacle, placePoint.transform.position, Quaternion.identity);
                 spikeObject.GetComponent<Obstacle>().OnReady += OnObstacleReady;
