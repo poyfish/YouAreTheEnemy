@@ -329,8 +329,8 @@ Transform:
   m_GameObject: {fileID: 376357609}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.4429879, y: 2.2980075, z: -0.65862936}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 6, y: 1, z: -0.65862936}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1474937470}
@@ -642,8 +642,8 @@ Transform:
   m_GameObject: {fileID: 535702571}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.442988, y: 2.2980075, z: -0.65862936}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1, y: 1, z: -0.65862936}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1474937470}
@@ -1318,9 +1318,6 @@ MonoBehaviour:
   - {fileID: 1267807571}
   - {fileID: 1610708141}
   player: {fileID: 1534635372}
-  inventorySlots:
-  - {fileID: 535702571}
-  - {fileID: 376357609}
 --- !u!4 &1419871850
 Transform:
   m_ObjectHideFlags: 0
