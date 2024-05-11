@@ -7,8 +7,6 @@ public class ObstaclePlacer : MonoBehaviour
 {
     [SerializeField] LayerMask ground;
 
-    [SerializeField] LayerMask enemy;
-
     private PlacePoint placePoint;
 
     public GameObject obstacle;
@@ -35,20 +33,13 @@ public class ObstaclePlacer : MonoBehaviour
         if(Input.GetMouseButton(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, ground);
-            RaycastHit2D checkForEnemy = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, enemy);
+            
 
             if (hit.collider != null && placePoint != null)
             {
                 Vector2 hitPoint = hit.point;
 
                 placePoint.transform.position = hitPoint;
-
-
-
-                if (checkForEnemy.collider != null && placePoint != null && inventoryManager.currentSlot == 0)
-                {
-                    
-                }
             }
 
         }

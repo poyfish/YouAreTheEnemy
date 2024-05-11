@@ -16,6 +16,12 @@ public class PlayerEnemy : MonoBehaviour
 
     public bool isDead;
 
+
+    public int health;
+
+    public bool didReachGoal;
+
+
     [System.Serializable]
     public struct JumpDistance
     {
@@ -89,14 +95,27 @@ public class PlayerEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("death"))
         {
-            isDead = true;
+            health--;
 
-            foreach (Collider2D collider in FindObjectsOfType<Collider2D>().Where(G => G.gameObject.CompareTag("death")))
+            if (health <= 0)
             {
-                Physics2D.IgnoreCollision(coll, collider);
-            }
+                isDead = true;
 
-            anim.CrossFade("player_death", 0, 0);
+                foreach (Collider2D collider in FindObjectsOfType<Collider2D>().Where(G => G.gameObject.CompareTag("death")))
+                {
+                    Physics2D.IgnoreCollision(coll, collider);
+                }
+
+                anim.CrossFade("player_death", 0, 0);
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "goal")
+        {
+            didReachGoal = true;
         }
     }
 

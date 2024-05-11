@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 031ae538f3686ad40abad22d8362799b
+guid: a4788e591b8eb8d44b3ed654b6737f8c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 15
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,106 +123,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robo_shooter_placed_0
+      name: robo_shooter_inventory_0
       rect:
         serializedVersion: 2
-        x: 40
-        y: 40
-        width: 19
-        height: 60
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 39
+        y: 39
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3887653292d43c4a9a3a176077d2a9d
-      internalID: 518427804
+      spriteID: 5bc18c73d21ef394da406cb15834c9ab
+      internalID: 2117550408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robo_shooter_placed_1
+      name: robo_shooter_inventory_1
       rect:
         serializedVersion: 2
-        x: 140
-        y: 40
-        width: 19
-        height: 34
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 138
+        y: 38
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 850472a356244ea43bf388e36b12167f
-      internalID: -2076447116
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: robo_shooter_placed_4
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 40
-        width: 19
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 80a6017b7e1ac1446825bbff5a1839af
-      internalID: 487453860
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: robo_shooter_placed_8
-      rect:
-        serializedVersion: 2
-        x: 233
-        y: 40
-        width: 32
-        height: 8
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb25ec69154847c4da72079b0f690700
-      internalID: -2089038348
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: robo_shooter_placed_9
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 40
-        width: 27
-        height: 7
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: adad4dbd0320bdb4eb798c5932c34bb6
-      internalID: 1035062039
+      spriteID: 317b637e9e4808240a03a2fb6947c3b3
+      internalID: 385661688
       vertices: []
       indices: 
       edges: []
@@ -238,17 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      robo_shooter_placed_0: 518427804
-      robo_shooter_placed_1: -2076447116
-      robo_shooter_placed_10: -1755665913
-      robo_shooter_placed_2: 1618605418
-      robo_shooter_placed_3: 795231911
-      robo_shooter_placed_4: 487453860
-      robo_shooter_placed_5: 1293093017
-      robo_shooter_placed_6: -458698491
-      robo_shooter_placed_7: 441716461
-      robo_shooter_placed_8: -2089038348
-      robo_shooter_placed_9: 1035062039
+      robo_shooter_inventory_0: 2117550408
+      robo_shooter_inventory_1: 385661688
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

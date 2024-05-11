@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 031ae538f3686ad40abad22d8362799b
+guid: 21c92fc81e91c544ba122da9d4d80eb5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 15
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robo_shooter_placed_0
+      name: goal_0
       rect:
         serializedVersion: 2
-        x: 40
-        y: 40
-        width: 19
-        height: 60
+        x: 15
+        y: 19
+        width: 21
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3887653292d43c4a9a3a176077d2a9d
-      internalID: 518427804
+      spriteID: 4e92ae32156e75d4bba8e1085b479fea
+      internalID: -1055810489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robo_shooter_placed_1
+      name: goal_1
       rect:
         serializedVersion: 2
-        x: 140
-        y: 40
-        width: 19
-        height: 34
+        x: 75
+        y: 19
+        width: 21
+        height: 25
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 850472a356244ea43bf388e36b12167f
-      internalID: -2076447116
+      spriteID: d6d13fba8721cbb47bb6d4215d734bf1
+      internalID: -1678045737
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robo_shooter_placed_4
+      name: goal_2
       rect:
         serializedVersion: 2
-        x: 640
-        y: 40
-        width: 19
-        height: 16
+        x: 135
+        y: 19
+        width: 21
+        height: 25
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,50 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80a6017b7e1ac1446825bbff5a1839af
-      internalID: 487453860
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: robo_shooter_placed_8
-      rect:
-        serializedVersion: 2
-        x: 233
-        y: 40
-        width: 32
-        height: 8
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb25ec69154847c4da72079b0f690700
-      internalID: -2089038348
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: robo_shooter_placed_9
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 40
-        width: 27
-        height: 7
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: adad4dbd0320bdb4eb798c5932c34bb6
-      internalID: 1035062039
+      spriteID: a95e25b097b7f774ba73f45cb6d09080
+      internalID: -2005806113
       vertices: []
       indices: 
       edges: []
@@ -238,17 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      robo_shooter_placed_0: 518427804
-      robo_shooter_placed_1: -2076447116
-      robo_shooter_placed_10: -1755665913
-      robo_shooter_placed_2: 1618605418
-      robo_shooter_placed_3: 795231911
-      robo_shooter_placed_4: 487453860
-      robo_shooter_placed_5: 1293093017
-      robo_shooter_placed_6: -458698491
-      robo_shooter_placed_7: 441716461
-      robo_shooter_placed_8: -2089038348
-      robo_shooter_placed_9: 1035062039
+      goal_0: -1055810489
+      goal_1: -1678045737
+      goal_2: -2005806113
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
