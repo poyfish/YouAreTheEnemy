@@ -8,8 +8,12 @@ public class Obstacle : MonoBehaviour
 {
     private Animator anim;
     BoxCollider2D coll;
+    Rigidbody2D rb;
 
     public bool doesUseWalkingAnimation;
+
+
+    public bool doesHaveRigidBody;
 
     public string startingAnimationName;
     public string PlacedAnimationName;
@@ -21,6 +25,12 @@ public class Obstacle : MonoBehaviour
     public Action OnReady;
     void Start()
     {
+        if (doesHaveRigidBody)
+        {
+            rb = GetComponent<Rigidbody2D>();
+            rb.bodyType = RigidbodyType2D.Static;
+        }
+
         anim = GetComponent<Animator>();
 
         anim.CrossFade(PlacedAnimationName, 0, 0);
@@ -30,6 +40,12 @@ public class Obstacle : MonoBehaviour
 
     private void Update()
     {
+        if (isReady && doesHaveRigidBody)
+        {
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            coll.enabled = true;
+        }
+
         if (isReady && doesUseWalkingAnimation)
         {
             anim.CrossFade(walkingAnimationName, 0, 0);

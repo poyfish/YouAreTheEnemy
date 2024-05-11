@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7309633673853022673}
   - component: {fileID: 5119029968704545614}
   - component: {fileID: -4097760509702406358}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: patrol enemy (real)
   m_TagString: death
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ MonoBehaviour:
   coll: {fileID: 0}
   rb: {fileID: 0}
   sprite: {fileID: 0}
-  MovementSpeed: 3
+  MovementSpeed: 2
   FlipSprite: 1
   obstacle: {fileID: -4097760509702406358}
 --- !u!212 &3485233071877564096
@@ -142,7 +142,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4460986714095218700}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -213,6 +213,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3963069b37712c048a5e123e20768077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doesUseWalkingAnimation: 1
+  doesHaveRigidBody: 1
   startingAnimationName: patrolling_enemy_starting
   PlacedAnimationName: patrolling_enemy_placed
+  walkingAnimationName: patrolling_enemy_walking
   isReady: 0

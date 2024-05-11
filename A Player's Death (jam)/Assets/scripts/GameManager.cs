@@ -1,40 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public List<GameObject> WinUIElements;
     public PlayerEnemy player;
 
-    int currentInventorySlot = 0;
+    bool hasWon = false;
 
+    IEnumerator YouWin()
+    {
+        yield return new WaitForSeconds(1.5f);
 
-    public List<GameObject> inventorySlots;
+        foreach (GameObject uiElement in WinUIElements)
+        {
+            uiElement.SetActive(true);
+        }
+
+        hasWon = true;
+    }
+
     void Start()
     {
-        
+        foreach (GameObject uiElement in WinUIElements)
+        {
+            uiElement.SetActive(false);
+        }
     }
 
-    
     void Update()
     {
-        if (player.isDead)
+        if (player.isDead && !hasWon)
         {
-
-        }
-
-        if(Input.GetKey(KeyCode.RightArrow))
-        {
-            if(currentInventorySlot < inventorySlots.Count)
-            {
-                currentInventorySlot++;
-            }
+            StartCoroutine(YouWin());
         }
     }
-   private void CompleteLevel()
-   {
-      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-   }
-    
 }
