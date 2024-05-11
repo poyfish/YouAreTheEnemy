@@ -116,7 +116,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.00083076954, y: 0.48039734}
@@ -165,7 +165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3963069b37712c048a5e123e20768077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  doesUseWalkingAnimation: 0
+  doesHaveRigidBody: 0
   startingAnimationName: spike_starting
   PlacedAnimationName: spike spwan
+  walkingAnimationName: 
   isReady: 0

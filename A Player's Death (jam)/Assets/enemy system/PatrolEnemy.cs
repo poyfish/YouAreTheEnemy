@@ -14,6 +14,9 @@ public class PatrolEnemy : enemy
 
     public Obstacle obstacle;
 
+
+    
+
     new void Update()
     {
         base.Update();

@@ -117,6 +117,23 @@ public class PlayerEnemy : MonoBehaviour
         {
             didReachGoal = true;
         }
+
+        if (other.tag == "death")
+        {
+            health--;
+
+            if (health <= 0)
+            {
+                isDead = true;
+
+                foreach (Collider2D collider in FindObjectsOfType<Collider2D>().Where(G => G.gameObject.CompareTag("death")))
+                {
+                    Physics2D.IgnoreCollision(coll, collider);
+                }
+
+                anim.CrossFade("player_death", 0, 0);
+            }
+        }
     }
 
     private void Go()
