@@ -102,12 +102,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doesUseWalkingAnimation: 0
-  doesDoAutomaticCollisionDisable: 1
   doesHaveRigidBody: 0
   startingAnimationName: robo_shooter_starting
   PlacedAnimationName: robo_shooter_placed
   walkingAnimationName: 
   isReady: 0
+  isInsidePlayer: 0
 --- !u!95 &6982946581031679614
 Animator:
   serializedVersion: 5
@@ -145,7 +145,7 @@ MonoBehaviour:
   BulletColl: {fileID: 3050408353082186826, guid: 17997896cf36e3a48bac53cceef4653a, type: 3}
   bulletPrefab: {fileID: 8723164525498917556, guid: 17997896cf36e3a48bac53cceef4653a, type: 3}
   yOffset: 1
-  shootForce: 10
+  shootForce: 5
 --- !u!61 &4837115839666061807
 BoxCollider2D:
   m_ObjectHideFlags: 0
