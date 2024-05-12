@@ -50,6 +50,8 @@ public class PatrolEnemy : enemy
 
     void Move()
     {
+        if (rb.bodyType == RigidbodyType2D.Static) return;
+
         switch (IsFacingRight)
         {
             case true:

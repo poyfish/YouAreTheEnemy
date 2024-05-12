@@ -31,6 +31,8 @@ public class PlayerEnemy : MonoBehaviour
         public float Distance;
 
         public float JumpForce;
+
+        public bool DoJump;
     }
 
     public JumpDistance[] JumpDistances;
@@ -49,7 +51,9 @@ public class PlayerEnemy : MonoBehaviour
 
         foreach (JumpDistance jumpDistance in JumpDistances)
         {
-            RaycastHit2D ShouldJump = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size / 3, 0f, Vector2.right, jumpDistance.Distance, jumpDistance.Layer);
+            if (!jumpDistance.DoJump) continue;
+
+            RaycastHit2D ShouldJump = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size / 3, 0f, Vector2.right, jumpDistance.Distance * movementSpeed > 0 ? 1 : 0, jumpDistance.Layer);
 
             if (ShouldJump && isGrounded())
             {
