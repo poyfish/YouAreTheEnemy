@@ -10,15 +10,9 @@ public class InventoryManager : MonoBehaviour
 
     public int currentSlot = 0;
 
-    private void Awake()
+    private void Start()
     {
         OnSlotSelected();
-    }
-
-
-    void Start()
-    {
-        
     }
 
      

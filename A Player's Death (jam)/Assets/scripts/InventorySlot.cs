@@ -21,11 +21,14 @@ public class InventorySlot : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
 
         placer = GameObject.FindObjectOfType<ObstaclePlacer>();
+
+        print(placer.gameObject.name);
     }
 
  
     public void OnSelcted()
     {
+
         placer.obstacle = obstacle;
 
         placer.ObstaclePlaceHolder = ObstaclePlaceHolder;

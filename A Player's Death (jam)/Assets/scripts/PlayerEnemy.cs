@@ -10,9 +10,7 @@ public class PlayerEnemy : MonoBehaviour
     BoxCollider2D coll;
     Animator anim;
 
-    public float speed;
-
-    float movementSpeed;
+    public float movementSpeed;
 
     public bool isDead;
 
@@ -42,8 +40,6 @@ public class PlayerEnemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
-
-        Go();
     }
 
 
@@ -145,11 +141,6 @@ public class PlayerEnemy : MonoBehaviour
                 anim.CrossFade("player_death", 0, 0);
             }
         }
-    }
-
-    private void Go()
-    {
-        movementSpeed = speed;
     }
 
     private void Stop()
