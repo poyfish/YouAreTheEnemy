@@ -22,6 +22,9 @@ public class PlayerEnemy : MonoBehaviour
     public bool didReachGoal;
 
 
+    public bool isHit;
+
+
     [System.Serializable]
     public struct JumpDistance
     {
@@ -73,19 +76,19 @@ public class PlayerEnemy : MonoBehaviour
 
     void Animations()
     {
-        if (rb.velocity.y > 0 && !isGrounded())
+        if (rb.velocity.y > 0 && !isGrounded() && !isHit)
         {
             anim.CrossFade("player_jumping", 0, 0);
         }
 
 
         //falling animation dosn't work fix that!
-        else if (rb.velocity.y > 0 && !isGrounded())
+        else if (rb.velocity.y > 0 && !isGrounded() && !isHit)
         {
             anim.CrossFade("player_falling", 0, 0);
         }
 
-        else if(isGrounded())
+        else if(isGrounded() && !isHit)
         {
             anim.CrossFade("player_running", 0, 0);
         }
@@ -96,6 +99,14 @@ public class PlayerEnemy : MonoBehaviour
         if (collision.gameObject.CompareTag("death"))
         {
             health--;
+
+            if(health >= 1)
+            {
+                print("test");
+
+                isHit = true;
+                anim.CrossFade("player_hit",0,0);
+            }
 
             if (health <= 0)
             {
@@ -144,6 +155,12 @@ public class PlayerEnemy : MonoBehaviour
     private void Stop()
     {
         movementSpeed = 0f;
+    }
+
+    //this is the worst way to do it but I'm still doing it
+    void EndIsHit()
+    {
+        isHit = false;
     }
 
     bool isGrounded()
