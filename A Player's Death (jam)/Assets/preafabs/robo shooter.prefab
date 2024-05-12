@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6982946581031679614}
   - component: {fileID: 6356318982556863567}
   - component: {fileID: 4837115839666061807}
+  - component: {fileID: 271563645838915983}
   m_Layer: 6
   m_Name: robo shooter
   m_TagString: Untagged
@@ -189,3 +190,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.58091116, y: 1.0666667}
   m_EdgeRadius: 0
+--- !u!114 &271563645838915983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8095069737580130006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625bae2a7ccfee445a99d9c3f06116c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

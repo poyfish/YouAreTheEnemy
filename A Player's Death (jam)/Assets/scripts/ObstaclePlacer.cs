@@ -32,6 +32,7 @@ public class ObstaclePlacer : MonoBehaviour
 
         if(Input.GetMouseButton(0))
         {
+
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Infinity, ground);
             
 
@@ -53,12 +54,10 @@ public class ObstaclePlacer : MonoBehaviour
                 obstacleObject.GetComponent<Obstacle>().OnReady += OnObstacleReady;
 
                 canPlaceObstacle = false;
-
-                Debug.Log(placePoint.name, placePoint);
-
-                Destroy(placePoint.gameObject);
             }
-            
+
+            Destroy(placePoint.gameObject);
+
         }
     }
 
