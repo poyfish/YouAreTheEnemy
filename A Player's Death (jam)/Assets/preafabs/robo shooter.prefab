@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doesUseWalkingAnimation: 0
+  doesDoAutomaticCollisionDisable: 1
   doesHaveRigidBody: 0
   startingAnimationName: robo_shooter_starting
   PlacedAnimationName: robo_shooter_placed

@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doesUseWalkingAnimation: 1
+  doesDoAutomaticCollisionDisable: 1
   doesHaveRigidBody: 1
   startingAnimationName: patrolling_enemy_starting
   PlacedAnimationName: patrolling_enemy_placed

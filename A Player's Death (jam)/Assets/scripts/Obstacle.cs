@@ -22,9 +22,16 @@ public class Obstacle : MonoBehaviour
 
     public bool isReady;
 
+
+    public bool isInsidePlayer;
+
+    bool x = false;
+
     public Action OnReady;
     void Start()
     {
+        
+
         if (doesHaveRigidBody)
         {
             rb = GetComponent<Rigidbody2D>();
@@ -49,6 +56,29 @@ public class Obstacle : MonoBehaviour
         if (isReady && doesUseWalkingAnimation)
         {
             anim.CrossFade(walkingAnimationName, 0, 0);
+        }
+
+        if (isReady && !isInsidePlayer)
+        {
+            transform.gameObject.tag = "death";
+        }
+
+        
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            
+            if (x == false)
+            {
+                print("test");
+                x = true;
+                transform.gameObject.tag = "Untagged";
+                isInsidePlayer = true;
+            }
         }
     }
 
